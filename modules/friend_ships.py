@@ -1,6 +1,6 @@
 # -*- encode: utf-8 -*-
 from requests_oauthlib import OAuth1Session
-from base import BaseTweet
+from modules.base import BaseTweet
 
 
 class FriendShipsTweet(BaseTweet):

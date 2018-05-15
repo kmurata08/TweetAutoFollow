@@ -11,7 +11,9 @@ class BaseTweet:
 
     @classmethod
     def oauth(cls):
-        # 認証処理
+        """
+        認証処理
+        """
         if cls.twitter is None:
             CK = config.CONSUMER_KEY
             CS = config.CONSUMER_SECRET
