@@ -21,6 +21,6 @@ class UsersTweet(BaseTweet):
             page = cls.pages[keyword] + 1
         else:
             page = 1
-        print(cls.pages)
+
         cls.pages[keyword] = page
         return cls.get_request(url, {"q": keyword, "page": page, "count": 20})

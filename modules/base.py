@@ -35,9 +35,10 @@ class BaseTweet:
             print("Request Success [%s]" % url)
             return data
         else:
-            print("Request Failed: %d" % res.status_code)
+            print("Request Failed: %d" % result.status_code)
             return False
 
+    @classmethod
     def post_request(cls, url, params):
         """
         TwitterAPIでPOSTリクエスト
@@ -48,5 +49,5 @@ class BaseTweet:
             print("Request Success [%s]" % url)
             return True
         else:
-            print("Request Failed: %d" % res.status_code)
+            print("Request Failed: %d" % result.status_code)
             return False
