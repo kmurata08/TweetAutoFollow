@@ -1,5 +1,5 @@
-from modules.friend_ships import FriendShipsTweet
-from modules.users import UsersTweet
+from modules.friend_ships import FriendShipsApi
+from modules.users import UsersApi
 
 if __name__ == "__main__":
     # 80人分のuidを取得

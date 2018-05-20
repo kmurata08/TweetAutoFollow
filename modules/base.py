@@ -3,7 +3,7 @@ import json, config
 from requests_oauthlib import OAuth1Session
 
 
-class BaseTweet:
+class BaseApi:
     """
     ツイートを行うクラスの基底クラス
     """

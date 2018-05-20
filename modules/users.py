@@ -1,9 +1,9 @@
 # -*- encode: utf-8 -*-
 from requests_oauthlib import OAuth1Session
-from modules.base import BaseTweet
+from modules.base import BaseApi
 
 
-class UsersTweet(BaseTweet):
+class UsersApi(BaseTweet):
     """
     フォロー関係のツイートクラス
     """
