@@ -3,7 +3,7 @@ from requests_oauthlib import OAuth1Session
 from modules.base import BaseApi
 
 
-class UsersApi(BaseTweet):
+class UsersApi(BaseApi):
     """
     フォロー関係のツイートクラス
     """
