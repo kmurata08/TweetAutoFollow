@@ -1,4 +1,6 @@
 # -*- encode: utf-8 -*-
+from modules.api.api import FriendShips, Search, Users
+
 
 class FollowAction():
     """
@@ -13,7 +15,7 @@ class FollowAction():
         uid_list = []
         for i in range(4):
             # 1回に取れるのは20人
-            users_dict = UsersApi.search_api("相互フォロー")
+            users_dict = Users.search_api("相互フォロー")
             _uid_list = [str(user["id"]) for user in users_dict]
             uid_list.extend(_uid_list)
 
@@ -28,7 +30,7 @@ class FollowAction():
         uid_list = []
         for i in range(4):
             # 1回に取れるのは100ツイート
-            tweets_dict = SearchApi.search_api("借金")["statuses"]
+            tweets_dict = Search.search_api("借金")["statuses"]
             _uid_list = [str(tweet["id"]) for tweet in tweets_dict]
             uid_list.extend(_uid_list)
 
@@ -45,7 +47,7 @@ class FollowAction():
 
         # 関係性を見る
         follow_uid_list = []
-        friend_lookup_dict = FriendShipsApi.lookup_api(uid_list_str)
+        friend_lookup_dict = FriendShips.lookup_api(uid_list_str)
         for friend in friend_lookup_dict:
             is_following = False
             for connection in friend["connections"]:
@@ -54,7 +56,7 @@ class FollowAction():
 
             # フォロー
             if not is_following:
-                result = FriendShipsApi.create_api(friend["id"])
+                result = FriendShips.create_api(friend["id"])
                 if result:
                     follow_uid_list.append(friend["id"])
 
