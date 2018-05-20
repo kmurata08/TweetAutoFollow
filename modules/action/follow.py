@@ -8,37 +8,37 @@ class FollowAction():
     """
 
     @classmethod
-    def follow_from_prof_search(cls):
+    def follow_from_prof_search(cls, keyword):
         """
         ユーザプロフィールをキーワード検索して、対象のユーザをフォロー
         """
         uid_list = []
         for i in range(4):
             # 1回に取れるのは20人
-            users_dict = Users.search_api("相互フォロー")
+            users_dict = Users.search_api(keyword)
             _uid_list = [str(user["id"]) for user in users_dict]
             uid_list.extend(_uid_list)
 
-        cls.follow_by_uid_list(uid_list)
+        cls._follow_by_uid_list(uid_list)
 
 
     @classmethod
-    def follow_from_tweet_search(cls):
+    def follow_from_tweet_search(cls, keyword):
         """
         ツイートをキーワード検索して、対象のユーザをフォロー
         """
         uid_list = []
-        for i in range(4):
+        for i in range(1):
             # 1回に取れるのは100ツイート
-            tweets_dict = Search.search_api("借金")["statuses"]
-            _uid_list = [str(tweet["id"]) for tweet in tweets_dict]
+            tweets_dict = Search.tweets_api(keyword)["statuses"]
+            _uid_list = [str(tweet["user"]["id"]) for tweet in tweets_dict]
             uid_list.extend(_uid_list)
 
-        cls.follow_by_uid_list(uid_list)
+        cls._follow_by_uid_list(uid_list)
 
 
     @classmethod
-    def follow_by_uid_list(cls, uid_list):
+    def _follow_by_uid_list(cls, uid_list):
         """
         ユーザIDのリストから、フォローしていないユーザをフォローする
         """
