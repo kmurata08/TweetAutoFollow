@@ -1,10 +1,10 @@
 # TweetAutoFollow
-自動フォロー系スクリプト
+ツイッター自動フォローシステム
 
-## 概要
-プロフィールまたはツイートから文字列検索を行い、ユーザをフォローする
+## Description
+プロフィールまたはツイートから文字列検索が行われ、ユーザが自動的にフォローされる
 
-## 使い方
+## Usage
 ```
 プロフィールに対するキーワード検索を行い、対象の文字列が含まれるユーザをフォロー
 $ python main.py profile_follow
@@ -13,7 +13,7 @@ $ python main.py profile_follow
 $ python main.py tweet_follow
 ```
 
-## その他
+## Anything Else
 main.pyがあるディレクトリに
 ```
 CONSUMER_KEY : コンシューマーキー
@@ -22,3 +22,6 @@ ACCESS_TOKEN : APIトークン
 ACCESS_TOKEN_SECRET : APIトークンシークレット
 ```
 を記述したconfig.pyの作成が必要。
+
+## Author
+[@Canon11](https://github.com/Canon11/)
